@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+<% 1.upto(180) do |index| %>
+midday_fix_<%= index %>:
+  first_ball: <%= rand(10) %>
+  second_ball: <%= rand(10) %>
+  third_ball: <%= rand(10) %>
+  drawing_time: one
+  drawing_date: 2016-08-26
+<% end %>
+
+<% 1.upto(180) do |index| %>
+evening_fix_<%= index %>:
+  first_ball: <%= rand(10) %>
+  second_ball: <%= rand(10) %>
+  third_ball: <%= rand(10) %>
+  drawing_time: two
+  drawing_date: 2016-08-26
+<% end %>

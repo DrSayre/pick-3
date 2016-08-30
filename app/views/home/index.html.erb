@@ -1,0 +1,10 @@
+<h1>Kentucky Lottery Pick 3 Wheel <small><%= @drawing_date.strftime('%A, %B %e') %> <%= @drawing_time %> Drawing</small></h1>
+<div class='well'>
+  <% @numbers[0].each do |first_ball| %>
+    <% @numbers[1].each do |second_ball| %>
+      <% @numbers[2].each do |third_ball| %>
+        <span class='numbers'><%= "#{first_ball} - #{second_ball} - #{third_ball}" %></span><br>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
