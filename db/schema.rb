@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160827021001) do
+ActiveRecord::Schema.define(version: 20161017002720) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20160827021001) do
     t.date     "drawing_date"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.index ["drawing_date", "drawing_time_id"], name: "index_drawings_on_drawing_date_and_drawing_time_id", unique: true, using: :btree
     t.index ["drawing_time_id"], name: "index_drawings_on_drawing_time_id", using: :btree
   end
 

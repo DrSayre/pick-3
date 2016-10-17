@@ -12,7 +12,11 @@ def save_three_numbers(results, draw)
     numbers = results_row[2].css('span').text.strip
     winning_numbers = numbers.scan(/\d/)
     drawing_date = Date.strptime(results_row[1].text,"%m/%d/%Y")
-    Drawing.create(drawing_date: drawing_date, first_ball: winning_numbers[0], second_ball: winning_numbers[1], third_ball: winning_numbers[2], drawing_time_id: time.id) if numbers.match /^\d/
+    begin
+      Drawing.create(drawing_date: drawing_date, first_ball: winning_numbers[0], second_ball: winning_numbers[1], third_ball: winning_numbers[2], drawing_time_id: time.id) if numbers.match /^\d/
+    rescue
+      print "failed\n"
+    end
   end
 end
 
